@@ -60,14 +60,14 @@ function deleteContact(key){
 
 function addContact(name, email, imageurl, contactnumber, id){
     const contactObject ={
-        name: document.getElementById("fullname").value,
+        name: document.getElementById("fullName").value,
         email: document.getElementById("myEmail").value,
-        imageurl: documeent.getElementById("imgurl").value,
+        imageurl: document.getElementById("imgurl").value,
         contactnumber: document.getElementById("myTel").value,
         id: Date.now(),
     };
     contacts.push(contactObject);
-    renderContects(contactObject);
+    renderContacts(contactObject);
 }
 
 const form = document.querySelector(".js-form");
