@@ -26,9 +26,64 @@ node.innerHTML = `
 </div>
 
 <button class="delete-contact js-delete-contact">
-    <svg fill="var(--svgcolor)" <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+    <svg fill="var(--svgcolor)" 
+    xmlns="http:www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px">
+    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
 `;
 
 list.append(node);
 }
 
+const list= document.querySelector(".contact_list");
+list.addEventListener("click", (event)=> {
+    if(event.target.classList.contains("js-delete-contact")){
+        const itemKey= event.target.parentElement.dataset.key;
+        deleteContact(itemKey);
+    }
+});
+
+function deleteContact(key){
+    const index = contacts.findIndex((item) => item.id === Number (key));
+
+    const UpdatedContactObject = {
+        deleted: true,
+        ...contacts [index],
+    };
+
+    contacts = contacts.filter((item) => item.id !== Number(key));
+
+    renderContacts(UpdatedContactObject);
+}
+
+function addContact(name, email, imageurl, contactnumber, id){
+    const contactObject ={
+        name: document.getElementById("fullname").value,
+        email: document.getElementById("myEmail").value,
+        imageurl: documeent.getElementById("imgurl").value,
+        contactnumber: document.getElementById("myTel").value,
+        id: Date.now(),
+    };
+    contacts.push(contactObject);
+    renderContects(contactObject);
+}
+
+const form = document.querySelector(".js-form");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    addContact();
+    form.reset();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const ref = localStorage.getItem("contacts");
+    if(ref){
+        contacts = JSON.parse(ref);
+        contacts.forEach((t) =>{
+            renderContacts(t);
+        })
+    }
+})
