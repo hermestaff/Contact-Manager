@@ -34,6 +34,10 @@ html{
     --roundcolor: #eef0f4;
     --toggleslider: #111;
     --togglesliderColor: #111;
+    --bg-buttoncolor: hwb(208 67% 0%);
+    --bg-buttontextcolor: black;
+    --bg-buttoncolorhover: hsl(208, 100%, 66%);
+    --bg-buttoncoloractive: hwb(208 67% 0%);
 }
 
 [data-theme="dark"]{
@@ -44,6 +48,10 @@ html{
     --roundColor: #222;
     --toggleslider: #fff;
     --togglesliderColor: #fff;
+    --bg-buttoncolor: hwb(226 19% 44%);
+    --bg-buttontextcolor: white;
+    --bg-buttoncolorhover: lab(38.96% 30.4 -66);
+    --bg-buttoncoloractive: hwb(226 19% 44%);
 }
 
 .ListContainer, .js-form{
@@ -216,4 +224,32 @@ input[type="tel"]{
 
 .submitbtn{
     display: block;
+    background-color: var(--bg-buttoncolor);
+    padding: 12px 24px;
+    color: var(--bg-buttontextcolor);
+    border-radius: 5px;
+}
+
+.submitbtn:hover{
+    background-color: var(--bg-buttoncolorhover);
+}
+
+.submitbtn:active{
+    background-color: var(--bg-buttoncoloractive);
+}
+
+[data-theme="dark"] .submitbtn{
+    display: block;
+    background-color: var(--bg-buttoncolor);
+    padding: 12px 24px;
+    color: var(--bg-buttontextcolor);
+    border-radius: 5px;
+}
+
+[data-theme="dark"] .submitbtn:hover{
+    background-color: var(--bg-buttoncolorhover);
+}
+
+[data-theme="dark"] .submitbtn:active{
+    background-color: var(--bg-buttoncoloractive);
 }
