@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Contact Manager</title>
     <script src="script.js" defer></script>
-    <script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://kit.fontawesome.com/4249ae3686.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <label class="theme-switch">
         <input type="checkbox" id="theme-toggle">
-        <span class="theme-slider"></span>
-        <span>Dark Mode</span>
+        <span class="theme-slider">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+        </span>
+        </i>
     </label>
 </div>
     <main>
@@ -24,19 +26,19 @@
             <br>
             <form autocomplete="off" class="js-form column">
                 <div class="name">
-                    <i class="far fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
                     <input type="text" required id="fullName" placeholder="Enter The Name" />
                 </div>
                 <div class="email">
-                    <i class="fas fa-at"></i>
+                    <i class="fa-solid fa-at"></i>
                     <input type="email" required id="myEmail" placeholder="Enter The Email" />
                 </div>
                 <div class="number">
-                    <i class="fas fa-phone"></i>
+                    <i class="fa-solid fa-phone"></i>
                     <input type="tel" required id="myTel" placeholder="Enter The Phone Number" />
                 </div>
                 <div class="img">
-                    <i class="far fa-image"></i>
+                    <i class="fa-solid fa-image-portrait"></i>
                     <input type="url" required id="imgurl" placeholder="Enter The Image URL" />
                 </div>
                 <button type="submit" class="submitbtn">Add Contact</button>
